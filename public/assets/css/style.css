@@ -5,11 +5,11 @@ margin-left:100px;
 #chart{
   margin-left:50px;
   width:200px;
-  opacity:.3;
+  height:200px;
+  opacity:1;
+  margin-left: 600px;
 }
-#chart:hover {
-  opacity: .9;
-}
+
 
 #top-button {
 	margin-left: 50px;
@@ -18,11 +18,8 @@ margin-left:100px;
 #graph-btn {
 	float:right;
 	margin-top: -47.8px;
-	margin-right: 170px;
-  background-color: pink;
 }
 #search-btn {
-    margin-left:100px;
     margin-top:50px;
 }
 .row {
@@ -53,11 +50,9 @@ margin-right:500px;
 	}
 .Navbar-container {
   background-color: white;
-  opacity: .3;
+  opacity: .9;
 }
-.Navbar-container:hover {
-  opacity: .8;
-}
+
 .main-container {
   background-image: url("http://www.trbimg.com/img-55c11b8c/turbine/la-sci-sn-cdc-antibiotic-resistance-20150804");
 
@@ -69,6 +64,7 @@ margin-right:500px;
 	padding:0px;
 	text-align: center;
   margin-left:250px;
+  opacity: .9;
 }
 h3 {
   align-self: center;
@@ -106,26 +102,23 @@ float:right;
 }
 
 #query-div {
-  opacity:.3;
-  height:300px;
-  margin-left: 100px;
+  opacity:.9;
+  height:200px;
+  margin-right: 500px;
   width:300px;
   float:right;
   background-color: white;
-}
-#query-div:hover {
-  opacity: .9;
 }
 .jumbotron {
   margin-top: 50px;
   margin-left: 250px;
   height:400px;
   /*background-image: url('http://www.nacion.com/vivir/medicina/Neisseria-gonorrhoeae-transmision-CDCGOV-LN_LNCIMA20160721_0001_5.jpg');*/
-  opacity: .3;
+  opacity: .9;
   background-color: white;
 }
 .jumbotron:hover {
-  opacity:.7;
+  opacity:.9;
 }
 .panel-title {
   background-color: white;
@@ -134,7 +127,7 @@ float:right;
   font-size:30px;
 }
 .jumbotron-text {
-  color:grey;
+  /*color:grey;*/
   font-size: 30px;
   text-align: center;
 }

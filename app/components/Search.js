@@ -33,9 +33,12 @@ var Search = createReactClass({
 				<h4 className='jumbotron-text'>Search the CDC for Information on Any Subject.</h4>
 				<h4 className='jumbotron-text'> Graph Publishing Trends over Time. </h4>
 				<button className="btn btn-success" id='learn-more-btn'> Learn more about the CDC </button> 
-				</div>
-				</div>
+				<div className='row'> 
 				<Query results = {this.state.results} setQuery={this.setQuery} />
+				</div>
+				</div>
+				
+				</div>
 				<Results results={this.state.results} saveArticle={this.saveArticle} />
 			</div>
 			)

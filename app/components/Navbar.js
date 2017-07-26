@@ -13,8 +13,8 @@ var Navbar = createReactClass({
 			<div className ='row'>
 				<div id = "nav-links" className = 'col-lg-12'>
 					<ul className="nav nav-pills">
-						  <li><a className="btn btn-lg btn-warning fp-buttons" href="/"> Home</a></li>
-					  	 <li> <a className="btn btn-lg btn-warning" href= "/api/saved">Saved</a></li>
+						  <li><a className="btn btn-lg btn-danger fp-buttons" href="/"> Home</a></li>
+					  	 <li> <a className="btn btn-lg btn-danger" href= "/api/saved">Saved</a></li>
 		</ul>		
 			</div>
 		</div>

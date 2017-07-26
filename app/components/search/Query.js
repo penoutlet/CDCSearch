@@ -78,18 +78,19 @@ getYears: function() {
 
 //draws the chart using graphArray.
 drawChart: function(array){
+  $('#chart').show();
         var diseasename = this.state.disease_name.toUpperCase();
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Year');
         data.addColumn('number', 'Articles');
         data.addRows(graphArray);
-        var Title = {'title': diseasename + ' ARTICLES PUBLISHED',
-              'width':400,
-              'height':300,
+        var Title = {'title': diseasename + ' ARTICLES',
+              'width':200,
+              'height':200,
               'hAxis': {
                 "title":"YEAR PUBLISHED"},
               'vAxis': {
-                "title": "NUM. OF ARTICLES"}
+                "title": "NUMBER"}
               };
       var chart = new google.visualization.LineChart(document.getElementById('chart'));
         chart.draw(data,Title);
@@ -115,18 +116,20 @@ drawChart: function(array){
 		e.preventDefault();
 		this.props.setQuery(this.state.disease_name);
 },
+  hideChart: function(){
+    $('#chart').hide();
+  },
 
 	render: function(){
 
 		return (
 			<div className="jumbotron-container">
 
-        <div className="row" id="second-row">
+        <div className="row">
          
       
-          <div className="col-lg-5 col-lg-offset-1">
 
-            <div className="panel panel-primary" id='query-div' >
+            <div className="panel-primary" id='query-div' >
          		<form onSubmit={this.handleSubmit}>
          		 <div className="form-group">
                 	<input 
@@ -142,23 +145,20 @@ drawChart: function(array){
                 	<button id='search-btn' type='Submit' className='btn btn-danger'>
                 	Search
                 	</button>
-                      </div>
+                </div>
           
              </div>
-             </form>
-           <button id='graph-btn' className='btn btn-warning' onClick={this.getYears}> Graph </button>
+            </form>
+              <button id='graph-btn' className='btn btn-warning' onClick={this.getYears}> Graph </button>
             </div>
-             </div>
-              <div className='col-lg-6'>
-             <li className="list-group-item" id='chart'>
+             <div className="panel-primary" id='chart' hidden>
           <h3>
-            <span>
+            <span hidden>
               <em> Graph of Articles</em>
             </span>
           </h3>
-
-        </li>
-        </div>
+          <button className='hide-btn' onClick={this.hideChart}> Hide </button>
+          </div>
              </div>
              </div>
 
