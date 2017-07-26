@@ -1,0 +1,143 @@
+
+.panel.panel-body {
+margin-left:100px;
+}
+#chart{
+  margin-left:50px;
+  width:200px;
+  opacity:.3;
+}
+#chart:hover {
+  opacity: .9;
+}
+
+#top-button {
+	margin-left: 50px;
+}
+
+#graph-btn {
+	float:right;
+	margin-top: -47.8px;
+	margin-right: 170px;
+  background-color: pink;
+}
+#search-btn {
+    margin-left:100px;
+    margin-top:50px;
+}
+.row {
+	width:1080px;
+} 
+form {
+	margin-top:20px;
+}
+.btn.btn-primary.btn-lg{
+	align-self: center;
+}
+.container{
+	height:100%;
+}
+#submit-button{
+margin-right:500px;
+}
+.panel-body {
+	background-color: white;
+	padding-top:10px;
+	padding-bottom: 0px
+	margin-top:0px;
+	margin-bottom: 0px;	
+	height:50px;
+}
+.nav.nav-pills {
+	background-color: white;
+	}
+.Navbar-container {
+  background-color: white;
+  opacity: .3;
+}
+.Navbar-container:hover {
+  opacity: .8;
+}
+.main-container {
+  background-image: url("http://www.trbimg.com/img-55c11b8c/turbine/la-sci-sn-cdc-antibiotic-resistance-20150804");
+
+}
+#nav-links {
+	text-align:center;
+}
+.list-group-item{
+	padding:0px;
+	text-align: center;
+  margin-left:250px;
+}
+h3 {
+  align-self: center;
+}
+.panel.panel-default{
+	height:300px;
+	color: red;
+	margin-top:100px;
+	opacity: .3;
+	width:60%;
+	margin-left:10%;
+	color:white;
+}
+.panel.panel-default:hover{
+	opacity:.9;
+}
+#See-more-button{
+	margin-left: 50px;
+}
+
+#searched-name-button{
+	width:300px;
+}
+.nav.nav-pills{
+	color:red;
+}
+
+#save-button{
+float:right;	
+}
+
+#submit-button{
+	float:left;
+	margin-right:250px
+}
+
+#query-div {
+  opacity:.3;
+  height:300px;
+  margin-left: 100px;
+  width:300px;
+  float:right;
+  background-color: white;
+}
+#query-div:hover {
+  opacity: .9;
+}
+.jumbotron {
+  margin-top: 50px;
+  margin-left: 250px;
+  height:400px;
+  /*background-image: url('http://www.nacion.com/vivir/medicina/Neisseria-gonorrhoeae-transmision-CDCGOV-LN_LNCIMA20160721_0001_5.jpg');*/
+  opacity: .3;
+  background-color: white;
+}
+.jumbotron:hover {
+  opacity:.7;
+}
+.panel-title {
+  background-color: white;
+  color:grey;
+  text-align: center;
+  font-size:30px;
+}
+.jumbotron-text {
+  color:grey;
+  font-size: 30px;
+  text-align: center;
+}
+#learn-more-btn {
+  margin-left:300px;
+}

@@ -1,0 +1,28 @@
+pseudocode
+
+get twitter api key
+- need website
+	-setup mlab 
+	- create db
+	- in shell
+	- run heroku commands to get mlab str and heroku
+	- 
+	- need Oauth
+
+setup routes
+setup components
+passdown save and get axios fncs from helpers
+start with simple - save one tweet to db & /api on click.
+ - get it from /api then append to page
+ - then append to page
+ - then try 10, containing a game name
+ - then get 10. then get 20
+ - maybe start with api and then db...
+app.js require components and reactDOm.render
+webpack -w
+render functions in comp
+	- module.exports
+require in main
+create index.html
+	-app div
+	-script bundle.js
