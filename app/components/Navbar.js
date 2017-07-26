@@ -1,9 +1,8 @@
+// DEPENDENCIES ---------------------------------------
 var React = require('react');
 var createReactClass = require('create-react-class');
 
-		  // <li><a href="/"> Home</a></li>
-					  	// <li> <a href= "/api/saved">Saved</a></li>
-					  	// <li> <a href= "/about"> About </a></li>
+// NAVBAR ---------------------------------------------		
 var Navbar = createReactClass({
 
 	

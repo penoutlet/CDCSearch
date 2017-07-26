@@ -14,77 +14,80 @@ var Query = createReactClass({
 
 	},
   
-// ----------------------------- CODE FOR MAKING DATES USABLE ----------------------------------------
-swap: function(array,firstIndex,secondIndex) {
+//  CODE FOR MAKING DATES USABLE -----------------------------------
+  swap: function(array,firstIndex,secondIndex) {
     var temp = array[firstIndex];
     array[firstIndex] = array[secondIndex];
     array[secondIndex] = temp;
   },
-
-selectionSort: function(array) {
+// SORT ALGORITHM----------------
+  selectionSort: function(array) {
   
-  var len = array.length;
-  var min;
+    var len = array.length;
+    var min;
 
-  for (var i = 0; i < len; i++) {
+    for (var i = 0; i < len; i++) {
     // set index of minimum to this position
-    min = i;
+      min = i;
 
     // check the rest of the array to see if anything is smaller
-    for (var j = i + 1; j < len; j++) {
-      if (array[j] < array[min]) {
-        min = j;
+      for (var j = i + 1; j < len; j++) {
+        if (array[j] < array[min]) {
+          min = j;
       }
     }
 
     // if the current position isn't the minimum, swap it and the minimum
-    if (i !== min) {
-      this.swap(array, i, min);
+      if (i !== min) {
+        this.swap(array, i, min);
     }
   }
 
-  return array;
+    return array;
 },
+// CREATES USABLE YEARS --------------------------------------------------------------
+  getYears: function() {
 
-getYears: function() {
-  // yearArray stores the publishing year, graphArray matches the years to the num. published, is used to make the chart. 
-  var yearArray = [];
-  graphArray = [];
+  // yearArray stores the publishing year, graphArray matches the years to the num. published 
+    var yearArray = [];
+    graphArray = [];
+
   // sends alert when users press graph without first pressing search.
-  if (!this.props.results.data) {
+    if (!this.props.results.data) {
     alert("Please press search first");
-  }
+    }
+
   // Gets the publishing years for all of the articles. Pushes them to yearArray  
-  for (var i =0; i< this.props.results.data.results.length; i++) {
-    var string = this.props.results.data.results[i].datePublished;
-    var yearPub = string.substring(0,4);
-    yearArray.push(yearPub);
+    for (var i =0; i< this.props.results.data.results.length; i++) {
+      var string = this.props.results.data.results[i].datePublished;
+      var yearPub = string.substring(0,4);
+      yearArray.push(yearPub);
   }
   //  Counts the # of articles published each year.
-  var sortedYearArray = this.selectionSort(yearArray);
-  var countedYearObj = R.countBy(Math.floor)(sortedYearArray);  
+    var sortedYearArray = this.selectionSort(yearArray);
+    var countedYearObj = R.countBy(Math.floor)(sortedYearArray);  
         
   // Saves the keys (years) and values (number published).
-  var keys = R.keys(countedYearObj); 
-  var values = R.values(countedYearObj);
+    var keys = R.keys(countedYearObj); 
+    var values = R.values(countedYearObj);
     
   // Pushes them to array. 
-  for (var i = 0; i < keys.length; i++) {
-    graphArray.push([keys[i],values[i]]);
+    for (var i = 0; i < keys.length; i++) {
+      graphArray.push([keys[i],values[i]]);
   }
 
-  this.drawChart(graphArray);
+    this.drawChart(graphArray);
 },
 
-//draws the chart using graphArray.
-drawChart: function(array){
-  $('#chart').show();
-        var diseasename = this.state.disease_name.toUpperCase();
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Year');
-        data.addColumn('number', 'Articles');
-        data.addRows(graphArray);
-        var Title = {'title': diseasename + ' ARTICLES',
+//CREATES GRAPH ----------------------------------------------------
+  drawChart: function(array){
+    $('#chart').show();
+      var diseasename = this.state.disease_name.toUpperCase();
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Year');
+      data.addColumn('number', 'Articles');
+      data.addRows(graphArray);
+      var Title = {'title': diseasename + ' ARTICLES',
               'width':200,
               'height':200,
               'hAxis': {
@@ -93,12 +96,12 @@ drawChart: function(array){
                 "title": "NUMBER"}
               };
       var chart = new google.visualization.LineChart(document.getElementById('chart'));
-        chart.draw(data,Title);
+      chart.draw(data,Title);
                 
     
 }, 
 
-// Collects User's Input, saves it as disease name in this.state.
+  // Collects User's Input, saves it as disease_name in this.state --------------------------
 	handleChange: function(e){
 		console.log("Component Changed");
 		var newState = {};
@@ -110,14 +113,18 @@ drawChart: function(array){
       console.log("disease_name: ", this.state.disease_name);
 },
 
-// runs setQuery passed down from Search.js
+  // srch button on click hides query div and displays the div and loading animation. When 
+  // runs setQuery passed down from Search.js
 	handleSubmit: function(e) {
+
 		console.log('Submitted');
 		e.preventDefault();
 		this.props.setQuery(this.state.disease_name);
+
 },
-  hideChart: function(){
-    $('#chart').hide();
+  hideQueryDiv: function(){
+    console.log('clicked');
+    
   },
 
 	render: function(){
@@ -142,7 +149,7 @@ drawChart: function(array){
                 	/>
                 	
                 <div id='submit-btn-div'>
-                	<button id='search-btn' type='Submit' className='btn btn-danger'>
+                	<button onClick={this.hideQueryDiv} id='search-btn' type='Submit' className='btn btn-danger'>
                 	Search
                 	</button>
                 </div>

@@ -1,10 +1,11 @@
-// DEPENDENCIES
+// DEPENDENCIES --------------------------------------------------
 var React = require('react');
 var helpers = require("../utils/helpers");
 var createReactClass = require('create-react-class');
 var Query = require('./search/Query');
 var Results = require('./search/Results');
 
+// SEARCH --------------------------------------------------------
 var Search = createReactClass({
 	
 	getInitialState: function(){

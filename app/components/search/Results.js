@@ -1,12 +1,6 @@
 var React = require("react");
-
-// for use of helpers functions for gets and posts.
 var helpers = require("../../utils/helpers");
-
-// for bypassing deprecated react.createElement err 
 var createReactClass = require('create-react-class');
-// requiring chart component to render it here.
-// requiring Ramda packg to make counting the arrays easier.
 
 
 var Results = createReactClass({
@@ -22,8 +16,8 @@ var Results = createReactClass({
 
 
 
-//SAVES ARTICLE ----------------------------------------------------------------------------     
-handleSubmit: function (item){
+	//SAVES ARTICLE ----------------------------------------------------------------------------     
+	handleSubmit: function (item){
 		console.log(item.name);
 		
 		helpers.postArticle(item.name,item.datePublished,item.contentUrl).then(function() {
@@ -34,17 +28,16 @@ handleSubmit: function (item){
 			
 
 		});
-},
+ 	},
 
-scrollTop: function() {
+	scrollTop: function() {
 	document.body.scrollTop=0;
-},
+	},
 	
 
 	
-
-renderArticles: function() {
-		// returns buttons and divs for each item in the results array. 
+	// FORMAT FOR DISPLAY OF EACH ARTICLE -----------------------------------
+	renderArticles: function() {
 		return this.props.results.data.results.map(function(item,index){
 			return (
 			
@@ -67,49 +60,49 @@ renderArticles: function() {
 				</li>
 			</div>
 			
-		);
-	}.bind(this));
+			);
+		}.bind(this));
 
 	},
 
-// CREATES ELEMENTS FOR ARTICLE DISPLAY -----------------------------------------------------------
+	// CREATES ELEMENTS FOR ARTICLE DISPLAY -----------------------------------------------------------
 	renderContainer: function(){
 		return (
-	<div className="main-container">
-        <div className="row">
-          <div className="col-lg-12">
+			<div className="main-container">
+        		<div className="row">
+         			 <div className="col-lg-12">
               
-                <ul className="list-group">
+               			 <ul className="list-group">
 
-                  {this.renderArticles()}
-                </ul>
+                  			{this.renderArticles()}
+                		</ul>
 
-           </div>
+           			</div>
 
-        </div>
+        		</div>
         
-    </div>
+    		</div>
 			);
 },
 
-render: function () {
+	render: function () {
 		
 		// if no results have been passed down, show this Html.
 			
-	if (!this.props.results.data) {
+		if (!this.props.results.data) {
 
-		return(
-			<h3>
-				<span>
-					<em> </em>
-				</span>
-			</h3>
+			return(
+				<h3>
+					<span>
+						<em> </em>
+					</span>
+				</h3>
 
 		);
 		
 	}
-	// if there are results, render the container and the results.
-	return this.renderContainer();
+		// if there are results, render the container and the results.
+		return this.renderContainer();
 	
 			
 }
