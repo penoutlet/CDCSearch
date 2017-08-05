@@ -1,0 +1,25 @@
+want the balls to appear when search begins, and clear when the results return.
+
+
+
+
+
+
+
+
+
+
+buton-onclick
+query-div.append(
+<div class="container">
+  <div class="ball"></div>
+  <div class="ball"></div>
+  <div class="ball"></div>
+  <div class="ball"></div>
+  <div class="ball"></div>
+  <div class="ball"></div>
+  <div class="ball"></div>
+</div>
+);
+
+if (this.state.results =! {})
