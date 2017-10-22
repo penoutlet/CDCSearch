@@ -5,8 +5,10 @@ module.exports = {
 
   // The plain compiled JavaScript will be output into this file
   output: {
-    filename: "public/bundle.js"
-  },
+    path: path.join(__dirname, '/dist'), // <- change last argument
+    filename: 'bundle.js',
+    publicPath: '/public/'
+},
 
   // This section desribes the transformations we will perform
   module: {
@@ -18,7 +20,7 @@ module.exports = {
         // node modules and server files unnecessarily
         include: /app/,
         loader: "babel-loader",
-  
+
         query: {
           // These are the specific transformations we'll be using.
           presets: ["react", "es2015"]
