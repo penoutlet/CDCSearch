@@ -23,9 +23,9 @@ app.use(express.static("./public"));
 
 // -------------------------------------------------
 
-// MongoDB configuration 
+// MongoDB configuration
 mongoose.connect("mongodb://heroku_89thh096:vo7ncpqck3b3vv15l1up0aovc0@ds125262.mlab.com:25262/heroku_89thh096");
-	
+
  var db = mongoose.connection;
 
 db.on("error", function(err) {
@@ -52,10 +52,10 @@ app.get("/api/saved", function(req,res){
 			console.log(err);
 		}
 		else{
-			res.send(article);
+			res.json(article);
 		}
 	});
-		
+
 });
 
 // posts new articles to /api/saved. Saves new articles to DB.
@@ -68,7 +68,7 @@ app.post('/api/saved', function(req,res){
 		}
 		else {
 			console.log(article);
-			res.send(article);
+			res.json(article);
 		}
 	});
 });
