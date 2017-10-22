@@ -74,5 +74,6 @@ app.post('/api/saved', function(req,res){
 });
 
 
-app.listen(PORT,
-	console.log("App listening on port 3000!"));
+app.listen(PORT,function(){
+console.log("App listening on port 3000!");
+});
